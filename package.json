@@ -1,0 +1,6 @@
+{
+    "name": "veyora-web",
+    "version": "1.0.0",
+    "description": "Web dengan bot Telegram",
+    "type": "module"
+}
