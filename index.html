@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veyora</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', monospace;
+        }
+        #text {
+            color: #fff;
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">Veyora</div>
+
+    <script>
+        setInterval(() => {
+            fetch('/api/get-text')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('text').textContent = data.text || 'Veyora';
+                })
+                .catch(() => {});
+        }, 3000);
+    </script>
+</body>
+</html>
